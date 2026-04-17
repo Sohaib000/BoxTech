@@ -1,0 +1,619 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | BoxTech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard_container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <span>BoxTech</span>
+        </div>
+        <div class="close-sidebar" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Main</div>
+          <ul class="sidebar-nav">
+            <li class="sidebar-nav-item active" data-page="dashboard">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </li>
+            <li class="sidebar-nav-item" data-page="analytics">
+              <i class="fas fa-chart-line"></i>
+              <span>Analytics</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Orders</span>
+              <span class="badge">12</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-box"></i>
+              <span>Products</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-users"></i>
+              <span>Customers</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Management</div>
+          <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-user-shield"></i>
+              <span>User Roles</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-bell"></i>
+              <span>Notifications</span>
+              <span class="badge">5</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-file-alt"></i>
+              <span>Reports</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Support</div>
+          <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+              <i class="fas fa-question-circle"></i>
+              <span>Help Center</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-headset"></i>
+              <span>Contact Support</span>
+            </li>
+            <li class="sidebar-nav-item">
+              <i class="fas fa-book"></i>
+              <span>Documentation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">
+            <span>LI</span>
+          </div>
+          <div class="user-info">
+            <div class="user-name">Lorem Ipsum</div>
+            <div class="user-role">Administrator</div>
+          </div>
+          <div class="user-menu">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <section id="dashboardPage" class="content-section active">
+      <header class="header">
+        <div class="left-section">
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+
+        <div class="header-actions">
+          <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search...">
+          </div>
+
+          <div class="header-icon">
+            <i class="fas fa-bell"></i>
+            <div class="notification-indicator"></div>
+          </div>
+
+          <div class="header-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+
+         
+        </div>
+      </header>
+
+      <!-- Dashboard Stats -->
+      <div class="dashboard-grid">
+        <div class="stat-card primary">
+          <div class="stat-header">
+            <div class="stat-title">Total Revenue</div>
+            <div class="stat-icon primary">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+          </div>
+          <div class="stat-value">$24,680</div>
+          <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>12.5% from last month</span>
+          </div>
+        </div>
+
+        <div class="stat-card secondary">
+          <div class="stat-header">
+            <div class="stat-title">New Customers</div>
+            <div class="stat-icon secondary">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <div class="stat-value">1,482</div>
+          <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>8.2% from last month</span>
+          </div>
+        </div>
+
+        <div class="stat-card success">
+          <div class="stat-header">
+            <div class="stat-title">Total Orders</div>
+            <div class="stat-icon success">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+          </div>
+          <div class="stat-value">3,594</div>
+          <div class="stat-change positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>5.7% from last month</span>
+          </div>
+        </div>
+
+        <div class="stat-card warning">
+          <div class="stat-header">
+            <div class="stat-title">Conversion Rate</div>
+            <div class="stat-icon warning">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+          </div>
+          <div class="stat-value">3.6%</div>
+          <div class="stat-change negative">
+            <i class="fas fa-arrow-down"></i>
+            <span>1.2% from last month</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Chart -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <div class="chart-title">Revenue</div>
+          <div class="chart-actions">
+            <button class="chart-action active" data-period="day">Day</button>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-card">
+          <div class="chart-header chart-card-header">
+            <div class="chart-title">Customer Sentiment</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Overview -->
+      <section class="review-overview">
+        <div class="review-header">
+          <div>
+            <h2>Review Overview</h2>
+            <p>Track customer sentiment and latest feedback in one elegant view.</p>
+          </div>
+          <button class="view-all">View all reviews</button>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card rating-card">
+            <div class="review-card-top">
+              <span class="review-label">Average Rating</span>
+              <div class="review-chip">4.8/5</div>
+            </div>
+            <div class="review-value">4.8</div>
+            <div class="review-subtext">Based on 1,249 customer reviews</div>
+          </div>
+
+          <div class="review-card sentiment-card">
+            <div class="review-card-top">
+              <span class="review-label">Sentiment</span>
+              <div class="review-chip positive">+86%</div>
+            </div>
+            <div class="review-value">Positive</div>
+            <div class="review-subtext">High satisfaction with product and support</div>
+          </div>
+
+          <div class="review-card feedback-card">
+            <div class="review-card-top">
+              <span class="review-label">Response Rate</span>
+              <div class="review-chip">92%</div>
+            </div>
+            <div class="review-value">Quick replies</div>
+            <div class="review-subtext">Most tickets resolved within 2 hours</div>
+          </div>
+        </div>
+
+        <div class="review-list-card">
+          <div class="review-list-header">
+            <div>
+              <h3>Latest Reviews</h3>
+              <p>Recent customer feedback from the past week.</p>
+            </div>
+          </div>
+          <ul class="review-list">
+            <li>
+              <div class="review-avatar">AM</div>
+              <div class="review-content">
+                <strong>Amelia</strong>
+                <p>Excellent dashboard layout — everything feels intuitive and fast.</p>
+              </div>
+              <span class="review-badge positive">5.0</span>
+            </li>
+            <li>
+              <div class="review-avatar">JR</div>
+              <div class="review-content">
+                <strong>James</strong>
+                <p>Nice design, the color scheme is clean and easy to read.</p>
+              </div>
+              <span class="review-badge positive">4.7</span>
+            </li>
+            <li>
+              <div class="review-avatar">LK</div>
+              <div class="review-content">
+                <strong>Lisa</strong>
+                <p>Great experience — would love to see more chart filtering options.</p>
+              </div>
+              <span class="review-badge neutral">4.3</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+      <section id="analyticsPage" class="content-section">
+        <header class="header">
+          <div class="left-section">
+            <h1 class="page-title">Analytics</h1>
+          </div>
+          <div class="header-actions">
+            <div class="search-bar">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search analytics...">
+            </div>
+          </div>
+        </header>
+
+        <div class="analytics-summary">
+          <div class="dashboard-grid">
+            <div class="stat-card primary">
+              <div class="stat-header">
+                <div class="stat-title">Page Views</div>
+                <div class="stat-icon primary"><i class="fas fa-eye"></i></div>
+              </div>
+              <div class="stat-value">128,740</div>
+              <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>18.3% increase</span></div>
+            </div>
+            <div class="stat-card secondary">
+              <div class="stat-header">
+                <div class="stat-title">Bounce Rate</div>
+                <div class="stat-icon secondary"><i class="fas fa-sign-out-alt"></i></div>
+              </div>
+              <div class="stat-value">32.4%</div>
+              <div class="stat-change positive"><i class="fas fa-arrow-down"></i><span>3.4% improvement</span></div>
+            </div>
+            <div class="stat-card success">
+              <div class="stat-header">
+                <div class="stat-title">New Leads</div>
+                <div class="stat-icon success"><i class="fas fa-user-plus"></i></div>
+              </div>
+              <div class="stat-value">6,820</div>
+              <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>11.2% increase</span></div>
+            </div>
+            <div class="stat-card warning">
+              <div class="stat-header">
+                <div class="stat-title">Revenue Impact</div>
+                <div class="stat-icon warning"><i class="fas fa-dollar-sign"></i></div>
+              </div>
+              <div class="stat-value">$16,450</div>
+              <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>6.8% increase</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="analytics-details">
+          <div class="review-overview">
+            <div class="review-header">
+              <div>
+                <h2>Top Campaigns</h2>
+                <p>Review which campaigns drove the highest engagement this month.</p>
+              </div>
+            </div>
+            <div class="table-grid">
+              <div class="table-dashboard_container">
+                <div class="table-header">
+                  <div class="table-title">Campaign</div>
+                  <a class="table-action">View all</a>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Channel</th>
+                      <th>Leads</th>
+                      <th>Conversion</th>
+                      <th>Revenue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Organic Search</td>
+                      <td>3,950</td>
+                      <td>5.8%</td>
+                      <td>$7,480</td>
+                    </tr>
+                    <tr>
+                      <td>Paid Ads</td>
+                      <td>1,780</td>
+                      <td>4.2%</td>
+                      <td>$4,120</td>
+                    </tr>
+                    <tr>
+                      <td>Referral</td>
+                      <td>1,090</td>
+                      <td>3.5%</td>
+                      <td>$2,230</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="review-card sentiment-card">
+                <div class="review-card-top">
+                  <span class="review-label">Retention Opportunity</span>
+                </div>
+                <div class="review-value">68%</div>
+                <div class="review-subtext">Improving customer onboarding can boost retention and long-term value.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <div class="chart-title">Weekly Traffic Trends</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-card">
+            <div class="chart-header chart-card-header">
+              <div class="chart-title">Channel Performance</div>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="donutChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <section class="review-overview analytics-insights">
+          <div class="review-header">
+            <div>
+              <h2>Analytics Insights</h2>
+              <p>Key performance indicators and recommendations from the latest data.</p>
+            </div>
+          </div>
+
+          <div class="review-grid">
+            <div class="review-card rating-card">
+              <div class="review-card-top">
+                <span class="review-label">Highest Traffic Source</span>
+              </div>
+              <div class="review-value">Organic Search</div>
+              <div class="review-subtext">Organic search is driving the largest volume of visitors this week.</div>
+            </div>
+
+            <div class="review-card sentiment-card">
+              <div class="review-card-top">
+                <span class="review-label">Top Conversion Segment</span>
+              </div>
+              <div class="review-value">Mobile Users</div>
+              <div class="review-subtext">Mobile sessions have the highest conversion rate across all channels.</div>
+            </div>
+
+            <div class="review-card feedback-card">
+              <div class="review-card-top">
+                <span class="review-label">Growth Opportunity</span>
+              </div>
+              <div class="review-value">Referral Campaigns</div>
+              <div class="review-subtext">Referral sources are underperforming; improve incentives to boost gains.</div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <!-- Code injected by live-server -->
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const barCtx = document.getElementById('barChart').getContext('2d');
+      const pieCtx = document.getElementById('pieChart').getContext('2d');
+
+      new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+          datasets: [{
+            label: 'Revenue',
+            data: [6200, 8800, 7500, 10500],
+            backgroundColor: ['#39d188', '#2fa56b', '#1c8c4a', '#84c98f'],
+            borderRadius: 12,
+            maxBarThickness: 40,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { mode: 'index', intersect: false }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: '#647c68' }
+            },
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: 'rgba(28, 140, 74, 0.12)',
+                drawBorder: false,
+              },
+              ticks: {
+                color: '#647c68',
+                callback: function(value) {
+                  return '$' + value / 1000 + 'k';
+                }
+              }
+            }
+          }
+        }
+      });
+
+      new Chart(pieCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Positive', 'Neutral', 'Negative'],
+          datasets: [{
+            data: [68, 20, 12],
+            backgroundColor: ['#39d188', '#84c98f', '#d94d4d'],
+            borderWidth: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '60%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#647c68', boxWidth: 12, padding: 20 }
+            },
+            tooltip: { callbacks: { label: function(context) { return context.label + ': ' + context.formattedValue + '%'; } } }
+          }
+        }
+      });
+
+      const lineCtx = document.getElementById('lineChart')?.getContext('2d');
+      const donutCtx = document.getElementById('donutChart')?.getContext('2d');
+
+      if (lineCtx) {
+        new Chart(lineCtx, {
+          type: 'line',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+              label: 'Visits',
+              data: [8200, 9100, 7600, 10300, 9800, 11200, 12400],
+              borderColor: '#1c8c4a',
+              backgroundColor: 'rgba(28, 140, 74, 0.15)',
+              tension: 0.4,
+              fill: true,
+              pointRadius: 4,
+              pointBackgroundColor: '#39d188',
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+              x: { grid: { display: false }, ticks: { color: '#647c68' } },
+              y: { beginAtZero: true, ticks: { color: '#647c68' } }
+            }
+          }
+        });
+      }
+
+      if (donutCtx) {
+        new Chart(donutCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Organic', 'Paid', 'Referral'],
+            datasets: [{
+              data: [54, 28, 18],
+              backgroundColor: ['#39d188', '#84c98f', '#d94d4d'],
+              borderWidth: 0,
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '65%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { color: '#647c68', boxWidth: 12, padding: 20 }
+              }
+            }
+          }
+        });
+      }
+
+      const navItems = document.querySelectorAll('.sidebar-nav-item[data-page]');
+      const sections = document.querySelectorAll('.content-section');
+      const pageTitle = document.querySelector('.page-title');
+
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const target = item.dataset.page;
+          if (!target) return;
+
+          navItems.forEach(nav => nav.classList.remove('active'));
+          item.classList.add('active');
+          sections.forEach(section => section.classList.remove('active'));
+          const activeSection = document.getElementById(target + 'Page');
+          if (activeSection) {
+            activeSection.classList.add('active');
+          }
+          pageTitle.textContent = target === 'dashboard' ? 'Dashboard' : 'Analytics';
+        });
+      });
+    });
+  </script>
+</body>
